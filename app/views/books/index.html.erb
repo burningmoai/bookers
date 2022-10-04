@@ -25,6 +25,17 @@
 <% end %>
 
  <h2>New Book</h2>
+ <!--バリデーション-->
+ <% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this book from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<!--バリデーション終わり-->
+
  <%= form_with model: Book.new do |f| %>
   <p>Title</p>
    <%= f.text_field :title %>
