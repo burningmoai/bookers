@@ -10,3 +10,6 @@
   <%= f.submit'Update Book' %>
 <% end %>
 <!--おそらくshowとback作る-->
+<%= link_to "show", book_path(@book.id) %>
+<!--ここにたぶん戻るボタン-->
+<%= link_to "back", books_path(@book.id) %>
